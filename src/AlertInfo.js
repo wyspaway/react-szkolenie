@@ -1,11 +1,11 @@
 import React from "react";
 
-function AlertInfo() {
-  const display = () => alert("Kliknięcie");
+function AlertInfo(props) {
+  const display = () => alert(props.alertText);
 
   return (
     <div>
-      <button onClick={display}>Klik alert</button>
+      <button onClick={display}>{props.buttonText}</button>
     </div>
   );
 }

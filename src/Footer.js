@@ -1,9 +1,7 @@
 import React from "react";
 
-const text = "Copyright 2020";
-
-function Footer() {
-  return <footer>{text}</footer>;
+function Footer(props) {
+  return <footer>{props.text}</footer>;
 }
 
 export default Footer;
