@@ -1,7 +1,13 @@
-import React from "react";
+import React, { Component } from "react";
 
-function TextSection() {
-  return <div>TextSection</div>;
+class TextSection extends Component {
+  render() {
+    return (
+      <div>
+        <p>Treść statyczna strony</p>
+      </div>
+    );
+  }
 }
 
 export default TextSection;
