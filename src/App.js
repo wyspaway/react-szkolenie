@@ -3,6 +3,7 @@ import Header from "./Header";
 import Console from "./Console";
 import TextSection from "./TextSection";
 import AlertInfo from "./AlertInfo";
+import Counter from "./Counter";
 import Footer from "./Footer";
 
 const TEXTS = {
@@ -35,6 +36,7 @@ function App() {
         buttonText={TEXTS.alert.buttonText}
         alertText={TEXTS.alert.alertText}
       />
+      <Counter />
       <Footer text={TEXTS.footer.text} />
     </div>
   );
