@@ -1,11 +1,6 @@
 import React, { Component } from "react";
+import Menu from "./Menu";
 import "./Header.css";
-
-const TEXTS = {
-  header: {
-    text: "Header",
-  },
-};
 
 class Header extends Component {
   state = { isScroll: false };
@@ -25,7 +20,7 @@ class Header extends Component {
   render() {
     return (
       <header className={this.state.isScroll ? `header-scroll` : `header`}>
-        {TEXTS.header.text}
+        <Menu />
       </header>
     );
   }

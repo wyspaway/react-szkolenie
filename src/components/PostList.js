@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 const API = "https://jsonplaceholder.typicode.com/posts";
 
@@ -25,7 +26,11 @@ class PostList extends Component {
 
   renderPostList = () =>
     this.state.postList.map((postElement) => (
-      <div key={postElement.id}>{postElement.title}</div>
+      <li>
+        <Link key={postElement.id} to={`/post/${postElement.id}`}>
+          {postElement.title}
+        </Link>
+      </li>
     ));
 
   render() {
@@ -34,7 +39,7 @@ class PostList extends Component {
       <div>
         <h2>Inne posty:</h2>
         {isLoading && <div>Ładowanie danych...</div>}
-        {!isLoading && this.renderPostList()}
+        <ul>{!isLoading && this.renderPostList()}</ul>
       </div>
     );
   }

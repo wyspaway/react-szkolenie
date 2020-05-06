@@ -1,46 +1,10 @@
 import React, { Component } from "react";
 
-const API = "https://jsonplaceholder.typicode.com/posts/1";
+const API = "https://jsonplaceholder.typicode.com/posts/";
 
 class ShowData extends Component {
-  // componentDidMount() {
-  //   this.setState({ isLoading: true });
-
-  //   fetch(API)
-  //     .then((response) => {
-  //       if (response.ok) {
-  //         return response.json();
-  //       } else {
-  //         throw new Error("Something went wrong ...");
-  //       }
-  //     })
-  //     .then((data) =>
-  //       setTimeout(() => {
-  //         this.setState({
-  //           postsList: data,
-  //           isLoading: false,
-  //         });
-  //       }, 1000)
-  //     );
-
-  //   // .catch((error) => this.setState({ error, isLoading: false }));
-  // }
-
-  // render() {
-  //   const { isLoading, error } = this.state;
-
-  //   if (error) {
-  //     return <p>{error.message}</p>;
-  //   }
-
-  //   return <div>
-  //     if (isLoading) {
-  //      <p>Loading ...</p>;
-  //   }
-  //     {this.state.postsList.title}
-  //   </div>;
-  // }
   state = {
+    // postId: this.props.postId,
     postDetail: {},
     isLoading: false,
     isError: false,
@@ -48,7 +12,7 @@ class ShowData extends Component {
 
   componentDidMount() {
     this.setState({ isLoading: true });
-    fetch(API)
+    fetch(API + this.props.postId)
       .then((response) => {
         if (response.ok) {
           return response.json();
