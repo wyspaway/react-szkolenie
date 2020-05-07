@@ -14,8 +14,6 @@ const TEXTS = {
 function About() {
   return (
     <div className="Contact">
-      <Header />
-
       <TextSection text={TEXTS.textsection.text} />
     </div>
   );
