@@ -1,24 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useReducer } from "react";
 import PostDetailsComponent from "./PostDetails.component";
+import {
+  POST_DETAILS_INIT_STATE,
+  POST_DETAILS_ACTION_TYPES,
+  PostDetailReducer,
+} from "./PostDetails.reducer";
 import PropTypes from "prop-types";
 
 function PostDetailsContainer({ postId }) {
-  const [postDetails, setPostDetails] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
+  const [postDetailsState, dispatch] = useReducer(
+    PostDetailReducer,
+    POST_DETAILS_INIT_STATE
+  );
 
   useEffect(() => {
-    setIsLoading(true);
+    dispatch({ type: POST_DETAILS_ACTION_TYPES.SET_LOADING });
     fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
       .then((response) => response.json())
       .then((data) =>
         setTimeout(() => {
-          setPostDetails(data);
-          setIsLoading(false);
+          dispatch({ type: POST_DETAILS_ACTION_TYPES.SET_DATA, value: data });
         }, 500)
       );
   }, []);
 
-  const { title, body } = postDetails;
+  const {
+    data: { title, body },
+    isLoading,
+  } = postDetailsState;
 
   return (
     <PostDetailsComponent isLoading={isLoading} title={title} body={body} />

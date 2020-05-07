@@ -13,5 +13,7 @@ export function counterReducer(state, action) {
       return { count: state.count - 1 };
     case COUNTER_ACTION_TYPES.RESET:
       return { count: 0 };
+    default:
+      throw new Error();
   }
 }

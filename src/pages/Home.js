@@ -5,7 +5,7 @@ import TextSection from "../components/TextSection/TextSection";
 import AlertInfo from "../components/AlertInfo/AlertInfo";
 // import Counter from "../components/Counter/Counter";
 import CounterHook from "../components/CounterHook/CounterHook.component";
-import CounterFunctional from "../components/CounterFunctional/CounterFunctional";
+// import CounterFunctional from "../components/CounterFunctional/CounterFunctional";
 import Footer from "../components/Footer/Footer";
 import PostDetailsContainer from "../components/PostDetails/PostDetails.container";
 import PostListContainer from "../components/PostList/PostList.container";
