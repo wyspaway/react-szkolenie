@@ -1,45 +1,36 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { useEffect, useState } from "react";
 import PostDetailsComponent from "./PostDetails.component";
+import PropTypes from "prop-types";
 
-class PostDetailsContainer extends Component {
-  static defaultProps = {
-    postId: "5",
-  };
+function PostDetailsContainer({ postId }) {
+  const [postDetails, setPostDetails] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
-  static propTypes = {
-    postId: PropTypes.string.isRequired,
-  };
-
-  state = {
-    postDetail: {},
-    isLoading: false,
-    isError: false,
-  };
-
-  componentDidMount() {
-    this.setState({ isLoading: true });
-    fetch(`https://jsonplaceholder.typicode.com/posts/${this.props.postId}`)
+  useEffect(() => {
+    setIsLoading(true);
+    fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
       .then((response) => response.json())
       .then((data) =>
         setTimeout(() => {
-          this.setState({
-            postDetail: data,
-            isLoading: false,
-          });
-        }, 500)
+          setPostDetails(data);
+          setIsLoading(false);
+        }, 4000)
       );
-  }
+  }, []);
 
-  render() {
-    const {
-      isLoading,
-      postDetail: { title, body },
-    } = this.state;
-    return (
-      <PostDetailsComponent isLoading={isLoading} title={title} body={body} />
-    );
-  }
+  const { title, body } = postDetails;
+
+  return (
+    <PostDetailsComponent isLoading={isLoading} title={title} body={body} />
+  );
 }
+
+PostDetailsContainer.defaultProps = {
+  postId: "5",
+};
+
+PostDetailsContainer.propTypes = {
+  postId: PropTypes.string.isRequired,
+};
 
 export default PostDetailsContainer;

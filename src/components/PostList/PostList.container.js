@@ -1,31 +1,30 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import PostListComponent from "./PostList.component";
+import PropTypes from "prop-types";
 
-class PostListContainer extends Component {
-  state = {
-    postList: [],
-    isLoading: false,
-    isError: false,
-  };
+function PostListContainer() {
+  const [postList, setPostList] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  componentDidMount() {
-    this.setState({ isLoading: true });
+  useEffect(() => {
+    setIsLoading(true);
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => response.json())
       .then((data) =>
         setTimeout(() => {
-          this.setState({
-            postList: data,
-            isLoading: false,
-          });
+          setPostList(data);
+          setIsLoading(false);
         }, 500)
       );
-  }
+  }, []);
 
-  render() {
-    const { isLoading, postList } = this.state;
-    return <PostListComponent isLoading={isLoading} postList={postList} />;
-  }
+  // const { postList } = postList;
+
+  return <PostListComponent isLoading={isLoading} postList={postList} />;
 }
+
+PostListContainer.propTypes = {
+  postList: PropTypes.array,
+};
 
 export default PostListContainer;

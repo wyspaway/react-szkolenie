@@ -3,7 +3,8 @@ import Header from "../components/Header/Header";
 import Console from "../components/Console/Console";
 import TextSection from "../components/TextSection/TextSection";
 import AlertInfo from "../components/AlertInfo/AlertInfo";
-import Counter from "../components/Counter/Counter";
+// import Counter from "../components/Counter/Counter";
+import CounterFunctional from "../components/CounterFunctional/CounterFunctional";
 import Footer from "../components/Footer/Footer";
 import PostDetailsContainer from "../components/PostDetails/PostDetails.container";
 import PostListContainer from "../components/PostList/PostList.container";
@@ -40,7 +41,8 @@ function Home() {
         buttonText={TEXTS.alert.buttonText}
         alertText={TEXTS.alert.alertText}
       />
-      <Counter />
+      {/* <Counter /> */}
+      <CounterFunctional />
       <Form />
 
       <PostListContainer />
