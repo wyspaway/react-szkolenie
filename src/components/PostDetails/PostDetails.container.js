@@ -15,22 +15,31 @@ function PostDetailsContainer({ postId }) {
 
   useEffect(() => {
     dispatch({ type: POST_DETAILS_ACTION_TYPES.SET_LOADING });
-    fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+    fetch(`https://jsonplaceholder.typicode.com/postss/${postId}`)
       .then((response) => response.json())
       .then((data) =>
         setTimeout(() => {
           dispatch({ type: POST_DETAILS_ACTION_TYPES.SET_DATA, value: data });
         }, 500)
-      );
+      )
+      .catch(() => {
+        dispatch({ type: POST_DETAILS_ACTION_TYPES.SET_ERROR });
+      });
   }, []);
 
   const {
     data: { title, body },
     isLoading,
+    isError,
   } = postDetailsState;
 
   return (
-    <PostDetailsComponent isLoading={isLoading} title={title} body={body} />
+    <PostDetailsComponent
+      isLoading={isLoading}
+      isError={isError}
+      title={title}
+      body={body}
+    />
   );
 }
 
