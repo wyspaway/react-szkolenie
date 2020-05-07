@@ -14,7 +14,7 @@ function PostDetailsContainer({ postId }) {
         setTimeout(() => {
           setPostDetails(data);
           setIsLoading(false);
-        }, 4000)
+        }, 500)
       );
   }, []);
 
