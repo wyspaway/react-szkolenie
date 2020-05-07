@@ -5,8 +5,8 @@ import TextSection from "../components/TextSection";
 import AlertInfo from "../components/AlertInfo";
 import Counter from "../components/Counter";
 import Footer from "../components/Footer";
-// import ShowData from "./components/ShowData";
-import PostList from "../components/PostList";
+// import PostDetailsContainer from "../components/PostDetails/PostDetails.container";
+import PostListContainer from "../components/PostList/PostList.container";
 import Form from "../components/Form";
 
 const TEXTS = {
@@ -41,8 +41,8 @@ function Home() {
       />
       <Counter />
       <Form />
-      {/* <ShowData /> */}
-      <PostList />
+      {/* <PostDetailsContainer /> */}
+      <PostListContainer />
       <Footer />
     </div>
   );
