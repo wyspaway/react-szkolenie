@@ -14,7 +14,7 @@ function PostDetailsComponent({ isLoading, title, body }) {
   return isLoading ? renderLoader() : renderContent();
 }
 
-PostDetailsComponent.PropTypes = {
+PostDetailsComponent.propTypes = {
   isLoading: PropTypes.bool,
   title: PropTypes.string,
   body: PropTypes.string,
