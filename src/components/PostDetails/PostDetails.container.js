@@ -15,7 +15,7 @@ function PostDetailsContainer({ postId }) {
 
   useEffect(() => {
     dispatch({ type: POST_DETAILS_ACTION_TYPES.SET_LOADING });
-    fetch(`https://jsonplaceholder.typicode.com/postss/${postId}`)
+    fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
       .then((response) => response.json())
       .then((data) =>
         setTimeout(() => {
