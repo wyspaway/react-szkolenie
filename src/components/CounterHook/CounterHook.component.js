@@ -1,20 +1,21 @@
-import React, { useReducer } from "react";
+import React, { useContext } from "react";
 import Button from "../Button/Button";
-import {
-  COUNTER_INITIAL_STATE,
-  COUNTER_ACTION_TYPES,
-  counterReducer,
-} from "./CounterHook.reducer";
+import { CounterContext } from "../../App";
+import { COUNTER_ACTION_TYPES } from "./CounterHook.reducer";
 
 function CounterHook() {
-  const [state, dispatch] = useReducer(counterReducer, COUNTER_INITIAL_STATE);
+  const [state, dispatch] = useContext(CounterContext);
 
   return (
     <div>
-      <div>Count: {state.count}</div>
+      <p>Count: {state.count}</p>
 
       <Button
-        handleClick={() => dispatch({ type: COUNTER_ACTION_TYPES.INCREMENT })}
+        handleClick={() =>
+          dispatch({
+            type: COUNTER_ACTION_TYPES.INCREMENT,
+          })
+        }
         text="+"
       />
       <Button

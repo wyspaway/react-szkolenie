@@ -7,7 +7,7 @@ const TEXTS = {
     text: "Header",
   },
   textsection: {
-    text: 123,
+    text: "Tekst na stronę About",
   },
 };
 

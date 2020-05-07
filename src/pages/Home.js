@@ -1,12 +1,10 @@
 import React from "react";
-import Header from "../components/Header/Header";
 import Console from "../components/Console/Console";
 import TextSection from "../components/TextSection/TextSection";
 import AlertInfo from "../components/AlertInfo/AlertInfo";
 // import Counter from "../components/Counter/Counter";
 import CounterHook from "../components/CounterHook/CounterHook.component";
 // import CounterFunctional from "../components/CounterFunctional/CounterFunctional";
-import Footer from "../components/Footer/Footer";
 import PostDetailsContainer from "../components/PostDetails/PostDetails.container";
 import PostListContainer from "../components/PostList/PostList.container";
 import Form from "../components/Form/Form";
@@ -16,9 +14,7 @@ const TEXTS = {
     alertText: "alert text",
     buttonText: "buttonText",
   },
-  header: {
-    text: "Header",
-  },
+
   footer: {
     text: "Copyright 2020",
   },
@@ -31,7 +27,6 @@ const TEXTS = {
 function Home() {
   return (
     <div className="Home">
-      <Header />
       <PostDetailsContainer />
       <Console />
       <TextSection
@@ -47,7 +42,6 @@ function Home() {
       <Form />
 
       <PostListContainer />
-      <Footer />
     </div>
   );
 }
