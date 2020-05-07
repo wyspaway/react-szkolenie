@@ -1,13 +1,13 @@
 import React from "react";
-import Header from "../components/Header";
-import Console from "../components/Console";
-import TextSection from "../components/TextSection";
-import AlertInfo from "../components/AlertInfo";
-import Counter from "../components/Counter";
-import Footer from "../components/Footer";
-// import PostDetailsContainer from "../components/PostDetails/PostDetails.container";
+import Header from "../components/Header/Header";
+import Console from "../components/Console/Console";
+import TextSection from "../components/TextSection/TextSection";
+import AlertInfo from "../components/AlertInfo/AlertInfo";
+import Counter from "../components/Counter/Counter";
+import Footer from "../components/Footer/Footer";
+import PostDetailsContainer from "../components/PostDetails/PostDetails.container";
 import PostListContainer from "../components/PostList/PostList.container";
-import Form from "../components/Form";
+import Form from "../components/Form/Form";
 
 const TEXTS = {
   alert: {
@@ -30,6 +30,7 @@ function Home() {
   return (
     <div className="Home">
       <Header />
+      <PostDetailsContainer />
       <Console />
       <TextSection
         text={TEXTS.textsection.text}
@@ -41,7 +42,7 @@ function Home() {
       />
       <Counter />
       <Form />
-      {/* <PostDetailsContainer /> */}
+
       <PostListContainer />
       <Footer />
     </div>

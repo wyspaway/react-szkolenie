@@ -1,7 +1,16 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import PostDetailsComponent from "./PostDetails.component";
 
 class PostDetailsContainer extends Component {
+  static defaultProps = {
+    postId: "5",
+  };
+
+  static propTypes = {
+    postId: PropTypes.string.isRequired,
+  };
+
   state = {
     postDetail: {},
     isLoading: false,
@@ -18,7 +27,7 @@ class PostDetailsContainer extends Component {
             postDetail: data,
             isLoading: false,
           });
-        }, 4000)
+        }, 500)
       );
   }
 

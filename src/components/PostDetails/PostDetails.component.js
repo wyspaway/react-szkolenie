@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function PostDetailsComponent({ isLoading, title, body }) {
   const renderLoader = () => <div>Ładowanie...</div>;
@@ -12,5 +13,11 @@ function PostDetailsComponent({ isLoading, title, body }) {
 
   return isLoading ? renderLoader() : renderContent();
 }
+
+PostDetailsComponent.PropTypes = {
+  isLoading: PropTypes.bool,
+  title: PropTypes.string,
+  body: PropTypes.string,
+};
 
 export default PostDetailsComponent;

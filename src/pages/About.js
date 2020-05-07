@@ -1,13 +1,13 @@
 import React from "react";
-import Header from "../components/Header";
-import TextSection from "../components/TextSection";
+import Header from "../components/Header/Header";
+import TextSection from "../components/TextSection/TextSection";
 
 const TEXTS = {
   header: {
     text: "Header",
   },
   textsection: {
-    text: "Treść statyczna strony About",
+    text: 123,
   },
 };
 

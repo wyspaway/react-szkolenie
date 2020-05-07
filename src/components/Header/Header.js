@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Menu from "./Menu";
+import Menu from "../Menu/Menu";
 import "./Header.css";
 
 class Header extends Component {
@@ -20,6 +20,7 @@ class Header extends Component {
   render() {
     return (
       <header className={this.state.isScroll ? `header-scroll` : `header`}>
+        {this.props.text}
         <Menu />
       </header>
     );

@@ -7,7 +7,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import page404 from "./pages/404";
 import Post from "./pages/Post";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer/Footer";
 
 import * as serviceWorker from "./serviceWorker";
 
